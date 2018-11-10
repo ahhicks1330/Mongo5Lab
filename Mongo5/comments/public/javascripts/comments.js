@@ -17,10 +17,7 @@ $(document).ready(function() {
     });
 
     $("#getComments").click(function() {
-        var name = $("#query").val();
-        var URL = "comment?q=" + name;
-        console.log("URL="+URL);
-        $.getJSON(URL, function(data) {
+        $.getJSON('comment', function(data) {
             console.log(data);
             var everything = "<ul>";
             for (var comment in data) {
@@ -53,6 +50,27 @@ $(document).ready(function() {
             }
             $("#json").html("");
             $("#comments").html("");
+            $("#singleComments").html("");
+        });
+    });
+
+    $("#queryPerson").click(function() {
+        console.log("Click Query");
+        $.getJSON('comment', function(data) {
+            console.log("All Data: ");
+            console.log(data);
+
+            var queriedPerson = $("#personName").val();
+            console.log(queriedPerson);
+            var everything = "<ul>";
+            for (var comment in data) {
+                var com = data[comment];
+                if (com.Name == queriedPerson) {
+                    everything += "<li> Name: " + com.Name + " -- Comment: " + com.Comment + "</li>";
+                }
+            }
+            everything += "</ul>";
+            $("#singleComments").html(everything);
         });
     });
 });

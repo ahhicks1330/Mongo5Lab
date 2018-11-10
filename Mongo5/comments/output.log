@@ -1,0 +1,16 @@
+nohup: ignoring input
+Connected
+[0mGET / [36m304 [0m6.073 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m1.480 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m304.666 ms - 1873[0m
+In the GET route?
+[ { _id: 5be732ca0c773001f9d95c6d,
+    Name: 'Bob',
+    Comment: 'All life is pain...',
+    __v: 0 } ]
+[0mGET /comment [36m304 [0m27.493 ms - -[0m
+In the DELETE route
+[0mDELETE /comment [32m200 [0m16.446 ms - 2[0m
+[0mGET / [36m304 [0m0.699 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m20.171 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m47.577 ms - 1873[0m

@@ -8,25 +8,53 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-    <form id="commentForm" action="">
-        <label for="name">Name: </label><input type="text" id="name" placeholder="Name"><br>
-        <label for="comment">comment: </label><input type="text" id="comment" placeholder="Comment"><br>
-        <label for="query">Query:</label><input type="test" id="query" placeholder="Query"><br>
-    </form>
+<body class="bg-info">
+    <div class="bg-primary page-header">
+        <h1>Comment Board</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" style="text-align: center">
+            <button type="button" class="btn btn-info" id="getComments">
+                <span class="glyphicon glyphicon-comment"></span> Get Comments
+            </button>
 
-    <button id="postComment">Post Comment</button>
-    <button id="getComments">Get Comments</button>
-    <button id="deleteComments">Delete All</button>
-    <div id="json"></div>
-    <div id="done"></div>
-    <div id="comments"></div>
+            <div id="comments"></div>
+        </div>
+        <div class="col-sm-3" style="text-align: center">
+            <form id="commentForm" action="">
+                <label for="name">Name: </label><input type="text" id="name" placeholder="Name"><br>
+                <label for="comment">Comment: </label><input type="text" id="comment" placeholder="Comment"><br>
+            </form>
+
+            <button type="button" class="btn btn-info" id="postComment">
+                <span class="glyphicon glyphicon-share-alt"></span> Post Comment
+            </button>
+            <button type="button" class="btn btn-info" id="deleteComments">
+                <span class="glyphicon glyphicon-trash"></span> Delete All
+            </button>
+
+            <div id="json"></div>
+            <div id="done"></div>
+        </div>
+        <div class="col-sm-4" style="text-align: center">
+            <form id="commentForm" action="">
+                <label for="personName">Query:</label><input type="text" id="personName" placeholder="Query"><br>
+            </form>
+
+            <button type="button" class="btn btn-info" id="queryPerson">
+                <span class="glyphicon glyphicon-search"></span> Query Person
+            </button>
+            <div>Comments:<span id="singleComments"></span></div>
+        </div>
+    </div>
 </body>
 
 </html>
